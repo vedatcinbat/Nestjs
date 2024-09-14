@@ -1,0 +1,8 @@
+# For creating module-controller-service quickly
+nest generate module products
+nest generate controller products
+nest generate service products
+----
+nest g mo products
+nest g co products
+nest g s products

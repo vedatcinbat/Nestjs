@@ -46,23 +46,23 @@
    - Creating and using basic middleware
    - Applying middleware to routes or globally
 
-9. **NestJS CLI (Command Line Interface)**
+9. **NestJS CLI (Command Line Interface)** (Done)
    - Using CLI commands for generating components
    - Automating module creation
    - NestJS CLI vs manual component creation
 
-10. **Exception Handling (try-catch, Filters)**
+10. **Exception Handling (try-catch, Filters)** (Done)
    - Using `try-catch` for error handling
    - Built-in exception filters (`HttpException`)
    - Creating custom exception filters
    - Global exception handling
 
-11. **Working with DTOs (Data Transfer Objects)**
+11. **Working with DTOs (Data Transfer Objects)** (Done)
    - What are DTOs and why use them?
    - Defining DTO classes
    - How to validate DTOs
 
-12. **Basic Validation with Pipes**
+12. **Basic Validation with Pipes** (Done)
    - Introduction to pipes
    - Using built-in pipes (e.g., `ValidationPipe`)
    - Creating custom pipes

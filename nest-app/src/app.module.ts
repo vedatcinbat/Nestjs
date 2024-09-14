@@ -9,9 +9,18 @@ import { BankModule } from './bank/bank.module';
 import { LoggerMiddleware } from './middlewares/LoggerMiddleware';
 import { UsersController } from './users/users.controller';
 import { ProductsController } from './products/products.controller';
+import { CardModule } from './card/card.module';
 
 @Module({
-  imports: [PostsModule, ProductsModule, AuthModule, UsersModule, BankModule],
+  imports: [
+    CardModule,
+    PostsModule,
+    ProductsModule,
+    AuthModule,
+    UsersModule,
+    BankModule,
+    CardModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
