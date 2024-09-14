@@ -41,7 +41,7 @@
    - Working with JSON, form-data, etc.
    - Handling errors in responses
 
-8. **Introduction to Middleware**
+8. **Introduction to Middleware** (Done)
    - What is middleware in NestJS?
    - Creating and using basic middleware
    - Applying middleware to routes or globally
