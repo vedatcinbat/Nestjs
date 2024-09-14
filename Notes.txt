@@ -29,13 +29,13 @@
    - Using services in controllers
    - Injecting providers into services
 
-6. **Modules in NestJS**
+6. **Modules in NestJS** (Done)
    - What is a module?
    - Creating and organizing modules
    - Feature modules vs shared modules
    - Modular organization best practices
 
-7. **Handling HTTP Requests and Responses**
+7. **Handling HTTP Requests and Responses** (Done)
    - How NestJS handles HTTP requests
    - Sending responses using different status codes
    - Working with JSON, form-data, etc.

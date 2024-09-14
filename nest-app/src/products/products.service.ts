@@ -9,7 +9,12 @@ export class ProductsService {
         return this.products;
     }
 
-    getProductById(productId: number) {
+    getProductById(productId: number): Product {
         return this.products.find(product => product.id === productId);
+    }
+
+    addProduct(product: Product): Product {
+        this.products.push(product);
+        return product;
     }
 }
