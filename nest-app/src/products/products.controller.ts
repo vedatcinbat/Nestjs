@@ -1,6 +1,7 @@
 import {Body, Controller, Get, HttpCode, HttpStatus, NotFoundException, Param, Post} from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { Product } from './products.types';
+import { ProductIdValidationPipe } from './pipes/products.pipe';
 
 @Controller('products')
 export class ProductsController {
@@ -19,7 +20,7 @@ export class ProductsController {
     }
 
     @Get(':id')
-    getProduct(@Param('id') id: number) {
+    getProduct(@Param('id', ProductIdValidationPipe) id: number) {
         const product = this.productsService.getProductById(id);
 
         if (!product) {

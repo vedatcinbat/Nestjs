@@ -84,13 +84,13 @@
    - Creating and testing HTTP requests
    - Automating tests for endpoints
 
-## Intermediate Level
-1. **Advanced Dependency Injection and Providers**
+## Intermediate Level (Done)
+1. **Advanced Dependency Injection and Providers** (Done)
    - Scoped providers (Transient, Request-scoped)
    - Using `@Injectable()` decorator
    - Registering and injecting custom providers
 
-2. **Custom Pipes, Guards, and Interceptors**
+2. **Custom Pipes, Guards, and Interceptors** (Done)
    - Creating custom pipes for advanced validation
    - Guards for route protection (e.g., `AuthGuard`)
    - Using interceptors for modifying request/response
