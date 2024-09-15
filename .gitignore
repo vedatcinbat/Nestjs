@@ -1,8 +1,8 @@
 nest-app/node_modules/
 nest-app/dist/
 nest-app/.env
-nest-app/.env.example
-nest-app/.env.local
-nest-app/.env.development
-nest-app/.env.test
-nest-app/.env.production
+nest-app/src/.env.example
+nest-app/src/.env.local
+nest-app/src/.env.development
+nest-app/src/.env.test
+nest-app/src/.env.production

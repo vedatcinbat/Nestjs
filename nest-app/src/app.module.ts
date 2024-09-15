@@ -1,25 +1,34 @@
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PostsModule } from './posts/posts.module';
 import { ProductsModule } from './products/products.module';
-import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
-import { BankModule } from './bank/bank.module';
-import { LoggerMiddleware } from './middlewares/LoggerMiddleware';
-import { UsersController } from './users/users.controller';
-import { ProductsController } from './products/products.controller';
-import { CardModule } from './card/card.module';
-
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 @Module({
   imports: [
-    CardModule,
-    PostsModule,
-    ProductsModule,
-    AuthModule,
+    ConfigModule.forRoot({
+      envFilePath: '.env.local',
+      isGlobal: true,
+    }),
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => ({
+        type: 'mysql',
+        host: configService.get<string>('DB_HOST'),
+        port: configService.get<number>('DB_PORT'),
+        username: configService.get<string>('DB_USERNAME'),
+        password: configService.get<string>('DB_PASSWORD'),
+        database: configService.get<string>('DB_NAME'),
+        entities: [__dirname + '/**/*.entity{.ts,.js}'],
+        synchronize: true,
+      }),
+    }),
     UsersModule,
-    BankModule,
-    CardModule,
+    ProductsModule,
+    PostsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

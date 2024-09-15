@@ -1,6 +1,8 @@
 import { Controller, Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UsersService } from './users.service';
+import { User } from './entities/user.entity';
+import { DeleteResult } from 'typeorm';
 
 @Controller('users')
 export class UsersController {
@@ -8,28 +10,22 @@ export class UsersController {
   constructor(private userService: UsersService) {}
 
   @Get()
-  findAll(): string {
-    return 'This action returns all users';
+  findAllUsers(): Promise<User[]> {
+    return this.userService.getUsers();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string): string {
-    return `This action returns user with id ${id}`;
+  findOneUser(@Param('id') id: number): Promise<User> | any[] {
+    return this.userService.getUserById(id);
   }
 
   @Post("register")
-  create(@Body() createUserDto: CreateUserDto) {
-    // The createUserDto object is validated by class-validator
+  createUser(@Body() createUserDto: CreateUserDto) {
     return this.userService.createUser(createUserDto);
   }
 
-  @Put(':id')
-  update(@Param('id') id: string, @Body() userData: any): string {
-    return `This action updates user with id ${id}`;
-  }
-
   @Delete(':id')
-  remove(@Param('id') id: string): string {
-    return `This action removes user with id ${id}`;
+  removeUser(@Param('id') id: number): Promise<DeleteResult> {
+    return this.userService.deleteUser(id);
   }
 }

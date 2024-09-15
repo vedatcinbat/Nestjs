@@ -68,18 +68,18 @@
    - Creating custom pipes
    - Using pipes with parameters
 
-13. **Basic CRUD Operations**
+13. **Basic CRUD Operations** (Done)
    - Creating a simple REST API (Create, Read, Update, Delete)
    - Using services to interact with the database
    - Implementing pagination and filtering
 
-14. **Connecting NestJS with PostgreSQL using TypeORM**
+14. **Connecting NestJS with MySQL using TypeORM** (Done)
    - What is TypeORM?
-   - Setting up PostgreSQL database
-   - Configuring TypeORM with NestJS
+   - Setting up MySQL database
+   - Configuring TypeORM with MySQL
    - Defining entities and repositories
 
-15. **Introduction to Postman for API Testing**
+15. **Introduction to Postman for API Testing** (Done)
    - Installing Postman
    - Creating and testing HTTP requests
    - Automating tests for endpoints
